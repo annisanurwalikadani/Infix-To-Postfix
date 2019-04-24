@@ -77,3 +77,41 @@ bool more(char input1, char input2){
 	else
 		return false;
 }
+
+//mengubah infix ke postfix
+string intopost(string input){
+	opstack.init();
+	int i=0;
+	string postfix = "";
+	while(input[i] != '\0'){
+		if(isOperand(input[i])){
+			postfix += input[i];
+		}
+		if(input[i] == '('){
+			opstack.push(input[i]);
+		}
+		if(input[i] == ')'){
+			while(!opstack.isEmpty() && opstack.Top() != '('){
+				postfix = postfix + " " + opstack.Top(); opstack.pop();
+			}
+			opstack.pop();
+		}
+		if(isOperator(input[i])){
+			if(opstack.isEmpty() || opstack.Top() == '('){
+				opstack.push(input[i]);
+			}else{
+				while(!opstack.isEmpty() && opstack.Top() != '(' && more(input[i], opstack.Top())){
+					postfix = postfix + " " + opstack.Top(); opstack.pop();
+				}
+				opstack.push(input[i]);
+			}
+		}
+		if(isOperator(input[i]))
+			postfix += " "; 
+		i++;
+	}
+	while(!opstack.isEmpty()){
+		postfix = postfix + " " + opstack.Top(); opstack.pop();
+	}
+	return postfix;
+}
