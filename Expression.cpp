@@ -34,9 +34,9 @@ public:
 		else
 			return false;
 	}
-}; convert SC;
-//pernyataan untuk syarat dalam mengubah infix ke postfix
+}; convert opstack;
 
+//pernyataan untuk syarat dalam mengubah infix ke postfix
 bool isOperand(char input){
 	int c = (int)input;
 	if(c >= 48 && c <= 57 || c >= 65 && c <= 90 || c >= 97 && c <= 122)
