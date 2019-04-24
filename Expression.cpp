@@ -115,3 +115,25 @@ string intopost(string input){
 	}
 	return postfix;
 }
+
+//fungsi utama
+int main(){
+
+	string infix;
+	cout<<"\t\t====================================================="<<endl;
+	cout<<"\t\tNama : 1. Annisa Nurwalikadani\t (1817051037)"<<endl;
+	cout<<"\t\t       2. Syela Septania\t (1817051058)"<<endl;
+	cout<<"\t\t       3. Suci Hikmawati\t (1817051033)"<<endl;
+	cout<<"\t\t       4. Rika Ningtias Azhari\t (1817051073)"<<endl;
+	cout<<"\t\t====================================================="<<endl<<endl;
+	cout<<"\t\t		    INFIX ke POSTFIX"<<endl<<endl;
+	cout <<"\t\tMasukkan operasi matematika dalam bentuk infix : ";
+	getline(cin,infix);
+	string postfix = intopost(infix);
+	cout << "\n\t\tInfix    = " << infix;
+	cout << "\n\t\tPostfix  = " << postfix;
+
+
+	cin.get();
+	return 0;
+}
