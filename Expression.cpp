@@ -1,5 +1,5 @@
 #include<iostream>
-using namaspace std;
+using namespace std;
 struct stack{
 	char stack2[200000];
 	int top;
