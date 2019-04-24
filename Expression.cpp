@@ -35,3 +35,35 @@ public:
 			return false;
 	}
 }; convert SC;
+//pernyataan untuk syarat dalam mengubah infix ke postfix
+
+bool isOperand(char input){
+	int c = (int)input;
+	if(c >= 48 && c <= 57 || c >= 65 && c <= 90 || c >= 97 && c <= 122)
+		return true;
+	else
+		return false;
+}
+
+bool isOperator(char input){
+	int c = (int)input;
+	if(c == 94 || c >= 42 && c <= 43 || c == 45 || c == 47)
+		return true;
+	else
+		return false;
+}
+
+//beberapa keadaan tiap operator
+int position(char input){
+	if(input == '^')
+		return 3;
+	else if(input == '*' || input == '/')
+		return 2;
+	else if(input == '+' || input == '-')
+		return 1;
+	else if(input == '(' || input == ')')
+		return 0;
+	else
+		return -1;
+}
+
