@@ -67,3 +67,13 @@ int position(char input){
 		return -1;
 }
 
+//penentuan posisi yang lebih tinggi
+bool more(char input1, char input2){
+	int c1 = position(input1);
+	int c2 = position(input2);
+
+	if(c1 <= c2)
+		return true;
+	else
+		return false;
+}
